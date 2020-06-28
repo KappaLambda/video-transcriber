@@ -1,0 +1,4 @@
+.python-version
+google-application-credentials.json
+__pycache__/
+/video_transcriber/static/

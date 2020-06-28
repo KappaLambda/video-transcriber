@@ -1,0 +1,30 @@
+{% extends "transcriber/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="form-wrapper">
+    <form action="/" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <input class="form-control" type="url" name="url" placeholder="Insert Youtube URL" autofocus pattern="^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))(.{11})$">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+<div id="embedded-video">
+</div>
+<div class="spinner">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+</div>
+<div id="transcript-result">
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript" src="/static/assets/js/home.js"></script>
+{% endblock %}
